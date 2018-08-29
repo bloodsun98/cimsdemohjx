@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- 指定工作空间，要与接口名相同，源代码没有去看，猜测应该是通过"这里的namespace.下边方法的id"来定位方法的 -->
+<mapper namespace="com.hjx.demo.mapper.CustomerMapper">
+
+    <!-- insert user -->
+    <insert id = "insert" parameterType="com.hjx.demo.model.Customer">
+        insert into tbl_cust_infor(cust_id,cust_name,cust_type,cust_no,cust_birth,cust_home,cust_phone,cust_email,cust_status)
+        values(#{cust_id},#{cust_name},#{cust_type},#{cust_no},#{cust_birth},#{cust_home},#{cust_phone},#{cust_email},#{cust_status});
+    </insert>
+
+    <!-- update user -->
+    <update id="update" parameterType="com.hjx.demo.model.Customer">
+        update tbl_cust_infor
+        set cust_id=#{cust_id},
+            cust_name=#{cust_name},
+            cust_type=#{cust_type},
+            cust_no=#{cust_no},
+            cust_birth=#{cust_birth},
+            cust_home=#{cust_home},
+            cust_phone=#{cust_phone},
+            cust_email=#{cust_email},
+            cust_status=#{cust_status}
+        where cust_id=#{cust_id};
+    </update>
+
+    <!-- find user -->
+    <select id="find" parameterType="String" resultType="com.hjx.demo.model.Customer">
+
+        select cust_id,cust_name,cust_type,cust_no,cust_birth,cust_home,cust_phone,cust_email,cust_status
+        from tbl_cust_infor
+        where cust_id=#{cust_id};
+    </select>
+
+    <select id="findAll" resultType="com.hjx.demo.model.Customer">
+
+        select cust_id,cust_name,cust_type,cust_no,cust_birth,cust_home,cust_phone,cust_email,cust_status
+        from tbl_cust_infor
+        where 1=1;
+    </select>
+
+
+    <!-- delete user -->
+    <delete id="delete" parameterType="String">
+        delete from tbl_cust_infor where cust_id=#{cust_id};
+    </delete>
+</mapper>

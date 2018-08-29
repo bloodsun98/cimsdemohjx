@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>User list</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body>
+
+<center>
+    <br><br>
+    <h2 style="color:green">All Records in Table user</h2>
+    <br><br>
+
+    <table class="table table-bordered table table-hover" style="width:800px">
+        <tr style="color:red">
+            <th>客户号</th>
+            <th>客户姓名</th>
+            <th>证件类型</th>
+            <th>证件号码</th>
+            <th>出生日期</th>
+            <th>家庭住址</th>
+            <th>联系电话</th>
+            <th>电子邮箱</th>
+            <th>客户状态</th>
+        </tr>
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.cust_id}">Jack</td>
+            <td th:text="${customer.cust_name}">24</td>
+            <td th:text="${customer.cust_type}">M</td>
+            <td th:text="${customer.cust_no}">jack@gmail.com</td>
+            <td th:text="${customer.cust_birth}">New York</td>
+            <td th:text="${customer.cust_home}">24</td>
+            <td th:text="${customer.cust_phone}">M</td>
+            <td th:text="${customer.cust_email}">jack@gmail.com</td>
+            <td th:text="${customer.cust_status}">New York</td>
+        </tr>
+    </table>
+
+    <p>
+        <a href="/greeting"><button type="button" class="btn btn-primary">Return to home</button></a>
+    </p>
+
+</center>
+</body>
+
+</html>

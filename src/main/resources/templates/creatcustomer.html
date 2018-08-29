@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>创建客户</title>
+</head>
+<body>
+<form action="/ddd" th:action ="@{/hjx}" th:object = "${/customer}"  method="post">
+     客户号:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  th:field="*${cust_id}"/><br/>
+    客户姓名:&nbsp;<input type="text"  th:field="${customer.cust_name}"/><br/>
+    证件类型:&nbsp;<input type="text"  th:field="${customer.cust_type}"/><br/>
+    证件号码:&nbsp;<input type="text"  th:field="${customer.cust_no}"/><br/>
+    出生日期:&nbsp;<input type="text"  th:field="${customer.cust_birth}"/><br/>
+    家庭住址:&nbsp;<input type="text"  th:field="${customer.cust_home}"/><br/>
+    联系电话:&nbsp;<input type="text"  th:field="${customer.cust_phone}"/><br/>
+    电子邮箱:&nbsp;<input type="text"  th:field="${customer.cust_email}"/><br/>
+
+    <input type="submit" value="提交"/>
+    <input type="reset" value="重置"/>
+</form>
+
+
+</body>
+</html>
