@@ -1,1 +1,1 @@
-# spring boot web devtelop for insert update delete select
+# spring boot web develop for insert update delete select
